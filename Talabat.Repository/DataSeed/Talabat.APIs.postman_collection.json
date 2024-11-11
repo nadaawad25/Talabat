@@ -1,0 +1,754 @@
+{
+	"info": {
+		"_postman_id": "db1adfe9-8a42-48f8-adbd-29dfa05b845f",
+		"name": "Talabat.APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "30560471"
+	},
+	"item": [
+		{
+			"name": "Session 01",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "https://localhost:7129/api/WeatherForecast"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/Products"
+					},
+					"response": []
+				},
+				{
+					"name": "Get product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/Products/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session 02",
+			"item": [
+				{
+					"name": "Buggy",
+					"item": [
+						{
+							"name": "Not Found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BaseUrl}}/api/Buggy/NotFound"
+							},
+							"response": []
+						},
+						{
+							"name": "Server Error",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BaseUrl}}/api/Buggy/ServerError"
+							},
+							"response": []
+						},
+						{
+							"name": "Bad Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BaseUrl}}/api/Buggy/BadRequest"
+							},
+							"response": []
+						},
+						{
+							"name": "Validation Error",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BaseUrl}}/api/Buggy/BadRequest/one"
+							},
+							"response": []
+						},
+						{
+							"name": "End Point Not Found",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{BaseUrl}}/Test"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/Products"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/Products/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session 03",
+			"item": [
+				{
+					"name": "Sorting And Filtration",
+					"item": [
+						{
+							"name": "Get All Products With Sorting",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/Products?Sort=PriceAsc",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									],
+									"query": [
+										{
+											"key": "Sort",
+											"value": "PriceAsc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products By Type",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/Products?TypeId=5",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									],
+									"query": [
+										{
+											"key": "TypeId",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products By Brand",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/Products?BrandId=1",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									],
+									"query": [
+										{
+											"key": "BrandId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products By Brand And Type",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/Products?BrandId=1&TypeId=6",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									],
+									"query": [
+										{
+											"key": "BrandId",
+											"value": "1"
+										},
+										{
+											"key": "TypeId",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Products By Brand And Type Sorted By PriceDesc",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/Products?BrandId=1&TypeId=6&Sort=PriceDesc",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									],
+									"query": [
+										{
+											"key": "BrandId",
+											"value": "1"
+										},
+										{
+											"key": "TypeId",
+											"value": "6"
+										},
+										{
+											"key": "Sort",
+											"value": "PriceDesc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Pagination",
+					"item": [
+						{
+							"name": "Get Page One Of Products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/Products?PageSize=5&PageIndex=1",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									],
+									"query": [
+										{
+											"key": "PageSize",
+											"value": "5"
+										},
+										{
+											"key": "PageIndex",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Last Page Of Products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/Products?PageSize=5&PageIndex=4",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									],
+									"query": [
+										{
+											"key": "PageSize",
+											"value": "5"
+										},
+										{
+											"key": "PageIndex",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products By Name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/Products?PageSize=5&PageIndex=1&Search=Frappuccino",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									],
+									"query": [
+										{
+											"key": "PageSize",
+											"value": "5"
+										},
+										{
+											"key": "PageIndex",
+											"value": "1"
+										},
+										{
+											"key": "Search",
+											"value": "Frappuccino"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get  All Brands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/Products/Brands"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}/api/Products/Types"
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}/api/Products",
+							"host": [
+								"{{BaseUrl}}"
+							],
+							"path": [
+								"api",
+								"Products"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "PriceAsc",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session 04",
+			"item": [
+				{
+					"name": "Basket",
+					"item": [
+						{
+							"name": "Get Basket",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/Baskets?BasketId=basket1",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"Baskets"
+									],
+									"query": [
+										{
+											"key": "BasketId",
+											"value": "basket1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Basket",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"id\": \"basket1\",\r\n  \"items\": [\r\n    {\r\n      \"id\": 4,\r\n      \"productName\": \".NET Black & White Mug\",\r\n      \"price\": 10,\r\n      \"quantity\": 32,\r\n      \"pictureUrl\": \"https://localhost:5001/images/products/2.png\",\r\n      \"brand\": \".NET\",\r\n      \"type\": \"USB Memory Stick\"\r\n    }\r\n  ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{BaseUrl}}/api/Baskets"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Basket",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{BaseUrl}}/api/baskets?id=basket1",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"baskets"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "basket1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Identity",
+					"item": [
+						{
+							"name": "Register As Omar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"OmarAhmed@gmail.com\",\r\n    \"DisplayName\":\"Omar Ahmed\",\r\n    \"PhoneNumber\":\"01234567891\",\r\n    \"password\": \"Pa$$w0rd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{BaseUrl}}/api/accounts/Register"
+							},
+							"response": []
+						},
+						{
+							"name": "Login As Omar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"email\": \"OmarAhmed@gmail.com\",\r\n\t\"password\": \"Pa$$w0rd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{BaseUrl}}/api/accounts/login"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Session 05",
+			"item": [
+				{
+					"name": "Validate EndPoints",
+					"item": [
+						{
+							"name": "Check if email exists",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{bob_token}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{BaseUrl}}/api/accounts/emailExists?email=OmarAhmed@gmail.com",
+									"host": [
+										"{{BaseUrl}}"
+									],
+									"path": [
+										"api",
+										"accounts",
+										"emailExists"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "OmarAhmed@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register To Check Email Exists As Omar",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"displayName\": \"Omar Ahmed\",\r\n  \"email\": \"OmarAhmed@gmail.com\",\r\n  \"phoneNumber\": \"01122334455\",\r\n  \"password\": \"Pa$$w0rd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{BaseUrl}}/api/accounts/Register"
+							},
+							"response": []
+						},
+						{
+							"name": "Update Basket Zero Quantity",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"basket1\",\n  \"items\": [\n    {\n      \"id\": 4,\n      \"productName\": \".NET Black & White Mug\",\n      \"price\": 10,\n      \"quantity\": 1,\n      \"pictureUrl\": \"https://localhost:5001/images/products/2.png\",\n      \"brand\": \".NET\",\n      \"type\": \"USB Memory Stick\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{BaseUrl}}/api/baskets"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get Current User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}/api/accounts"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User Address",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhaG1lZG5hc3I5N0BnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9naXZlbm5hbWUiOiJBaG1lZCBOYXNyIiwiZXhwIjoxNjYyNjQ0MjMwLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxLyIsImF1ZCI6Ik15U2VjdXJlZEFwaVVzZXJzIn0.RtIg0EhGFEep_WdvpKtzmL6fW6c1csOeX7Nf-7T1f-g"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}/api/accounts/address"
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Address (Omar)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhaG1lZC5uYXNyQGxpbmtkZXYuY29tIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZ2l2ZW5uYW1lIjoiQWhtZWQgTmFzciIsImV4cCI6MTY3Mzg4NDEwMSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NTAwMSIsImF1ZCI6Ik15U2VjdXJlZEFwaVVzZXJzIn0.bhXAQsghfJMoIYpIYC4prq6W8uFJaWcIxKAwfI5dFy4"
+							}
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJhaG1lZG5hc3I5N0BnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9naXZlbm5hbWUiOiJBaG1lZCBOYXNyIiwiZXhwIjoxNjYyNzQ0Mzc3LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxLyIsImF1ZCI6Ik15U2VjdXJlZEFwaVVzZXJzIn0.cc5Om4AabDr4ZuVhc7VXZaxXY77FgYCvowD2_TvV0Pg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"Omar\",\n  \"lastName\": \"Ahmed\",\n  \"street\": \"10 The Updated Street\",\n  \"city\": \"Giza\",\n  \"country\": \"Egypt\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}/api/accounts/address"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BaseUrl",
+			"value": "https://localhost:7019",
+			"type": "string"
+		}
+	]
+}
